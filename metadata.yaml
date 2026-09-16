@@ -1,3 +1,5 @@
 homepage: "https://siteos.sh"
 documentation: "https://github.com/pixel-point/siteos-gtm-cookie#installation"
-versions: []
+versions:
+  - sha: bbcfcf778ab4ba2f9172769b5500ca1f5f02b1b1
+    changeNotes: "Initial Gallery package: SiteOS Cookie with native Consent Mode v2 APIs, resilient loader, documentation and branding."
