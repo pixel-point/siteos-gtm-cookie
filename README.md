@@ -35,6 +35,16 @@ not permission to start optional tags. Configure the consent requirements and tr
 Google and non-Google tag separately. Basic versus Advanced Consent Mode depends on those tags
 and the Cookie configuration; this loader alone does not establish either mode.
 
+The template loads the same runtime and published configuration as the website snippet. Banner
+appearance, languages, service selection, regional behavior, GPC, privacy controls and consent
+storage settings therefore stay in Cookie; they do not need duplicate fields in GTM. Publish
+configuration changes in SiteOS before testing their effect on the website.
+
+For consent across subdomains, explicitly list every installation hostname and enable shared
+subdomain consent in Cookie. Install the same public key on each hostname. Sharing is off by
+default, applies only to the configured parent domain and keeps different banners separate.
+The GTM template does not infer or expand the installation domain list.
+
 For Basic mode, initialize GA4 on `siteos_analytics_granted` and Google Ads on
 `siteos_ads_granted`, with their consent requirements enabled. Configure native GA4 withdrawal
 control in Cookie with the actual measurement IDs. A consent update alone does not guarantee
