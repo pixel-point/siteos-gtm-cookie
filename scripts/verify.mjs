@@ -101,7 +101,7 @@ export function verify(root, { release = false } = {}) {
   return manifest;
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (process.argv[1] && fs.realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   assert.ok(
     process.argv.slice(2).every((arg) => arg === "--release"),
     "unsupported argument",
